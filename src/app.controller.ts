@@ -16,9 +16,4 @@ export class AppController {
   lessonQuiz(@Body("lesson") lesson: string, @Body("language") language: string){
     return this.appService.lessonQuiz(lesson, language)
   }
-
-  @Get('/health')
-  healthCheck() {
-    return { name: 'Almir', age: 30 };
-  }
 }
