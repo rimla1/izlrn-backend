@@ -57,8 +57,10 @@ export class AuthService {
         lessonToQuizAttempts: omitLessonToQuizAttempts,
         ...userData
       } = user;
+      console.log(this.jwtService.sign(userData))
       return this.jwtService.sign(userData);
     } catch (error) {
+        console.log("Service Error!")
       throw error;
     }
   }

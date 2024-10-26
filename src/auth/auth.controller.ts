@@ -24,9 +24,12 @@ export class AuthController {
 
     @Post("register")
     register(@Body() registerDto: registerDto){
+        console.log("Triggered!")
         try {
+
             return this.authService.register(registerDto)
         } catch (error) {
+            console.log(error)
             throw error
         }
     }

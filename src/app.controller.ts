@@ -7,6 +7,11 @@ import { quizDto } from './dtos/quizDto.dto';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
+  @Get("/")
+  test(){
+    return "Hello world!"
+  }
+
   @Post()
   @UseGuards(JWTGuard)
   async quiz(@Req() req, @Body() quizInformation: quizDto): Promise<string> {
@@ -18,5 +23,6 @@ export class AppController {
   async lessonQuiz(@Body("lesson") lesson: string, @Body("language") language: string, @Req() req){
     return this.appService.lessonQuiz(lesson, language, req.user.email)
   }
+
 
 }

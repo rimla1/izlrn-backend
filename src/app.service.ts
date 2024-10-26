@@ -68,18 +68,13 @@ export class AppService {
         ],
       });
   
-      console.log("Do ovde radi v2", completion.choices[0].message.content);
-      
-      // Ensure valid JSON is returned
       let questions;
       try {
         questions = JSON.parse(completion.choices[0].message.content);
       } catch (err) {
-        console.error("Failed to parse JSON:", err);
         return "The AI response was not a valid JSON array.";
       }
   
-      // Check if it’s a valid array
       if (!Array.isArray(questions)) {
         return "Something went wrong while creating your quiz, no attempts were deducted.";
       }
@@ -89,7 +84,6 @@ export class AppService {
   
       return questions;
     } catch (error) {
-      console.log("Sta je error!?", error);
       throw new HttpException('Failed to fetch completion', HttpStatus.INTERNAL_SERVER_ERROR);
     }
   }
