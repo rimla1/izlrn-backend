@@ -6,9 +6,9 @@ dotenv.config();
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+
   app.enableCors({
-    allowedHeaders: '*',
-    origin: '*',
+    origin: 'https://izlrn.com',
     methods: 'GET,POST,PUT,DELETE,OPTIONS',
     credentials: true,
   });
