@@ -24,5 +24,9 @@ export class AppController {
     return this.appService.lessonQuiz(lesson, language, req.user.email)
   }
 
+  @Get('/health')
+  async health(){
+    return "Checking the health of the application!"
+  }
 
 }
