@@ -9,8 +9,8 @@ async function bootstrap() {
   let httpsOptions;
   try {
     httpsOptions = {
-      key: fs.readFileSync('/etc/letsencrypt/live/api.izlrn.com/privkey.pem'),
-      cert: fs.readFileSync('/etc/letsencrypt/live/api.izlrn.com/cert.pem'),
+      key: fs.readFileSync('/home/ec2-user/ssl-certs/privkey1.pem'),
+      cert: fs.readFileSync('/home/ec2-user/ssl-certs/cert1.pem'),
     };
   } catch (error) {
     console.error('Error reading HTTPS options: ', error);
