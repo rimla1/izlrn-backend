@@ -10,7 +10,7 @@ async function bootstrap() {
   try {
     httpsOptions = {
       key: fs.readFileSync('/home/ec2-user/ssl-certs/privkey1.pem'),
-      cert: fs.readFileSync('/home/ec2-user/ssl-certs/cert1.pem'),
+      cert: fs.readFileSync('/home/ec2-user/ssl-certs/fullchain1.pem'),
     };
   } catch (error) {
     console.error('Error reading HTTPS options: ', error);
